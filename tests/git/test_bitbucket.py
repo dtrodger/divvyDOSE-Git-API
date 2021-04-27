@@ -1,0 +1,3 @@
+"""
+Bitbucket client test module
+"""
