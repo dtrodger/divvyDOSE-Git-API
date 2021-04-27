@@ -83,8 +83,8 @@ Response Body
 }
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTP 4** - Client error  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTP 500 - Server error  
+HTTP 4** - Client error  
+HTTP 500 - Server error  
 ### Future Enhancements
 This project includes a framework for building a test suite in the `/tests` directory. The test suite is built using the
 [pytest](https://docs.pytest.org/en/6.2.x/) package. There is a test module per module in the `/api` directory, as well 
