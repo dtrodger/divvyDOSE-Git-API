@@ -15,7 +15,7 @@
 7. Run the test suite and coverage report  
 `pytest --cov=. --cov-fail-under=1`  
 ### API Specification
-### GET http://127.0.0.1:5000/api/git/profile/git profile name/  
+### GET http://127.0.0.1:5000/api/git/profile/git-profile-alias/  
 
 Headers  
 Authorization - Bearer Welcometo2021  
