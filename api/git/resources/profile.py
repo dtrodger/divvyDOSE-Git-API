@@ -1,6 +1,7 @@
 """
 Git app Profile API resource
 """
+
 import logging
 
 from flask_restful import Resource
@@ -28,7 +29,7 @@ class GitProfileResource(Resource):
 
         # TODO - Integrate caching for a faster response
         try:
-            response_body = {
+            return {
                 "profile_for": profile,
                 "github_profile": github_organization_profile(profile),
                 "bitbucket_profile": bitbucket_team_profile(profile),
@@ -38,5 +39,3 @@ class GitProfileResource(Resource):
             # error messages
             log.error(f"Git app Profile resource GET failed with {e}")
             raise APIException(f"Failed to build Git profile for {profile}")
-
-        return response_body

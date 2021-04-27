@@ -14,6 +14,76 @@
 `$ curl -H "Authorization: Bearer Welcometo2021" http://127.0.0.1:5000/api/git/profile/mailchimp/`
 7. Run the test suite and coverage report  
 `pytest --cov=. --cov-fail-under=1`  
+### API Specification
+### GET http://127.0.0.1:5000/api/git/profile/[git profile name]  
+
+Headers
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Authorization - Bearer Welcometo2021
+
+Returns
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTP 200 - Git GitHub and Bitbucket profile   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response Body  
+```{
+    "profile_for": "mailchimp",
+    "github_profile": {
+        "public_repository_count": 30,
+        "forked_repository_count": 3509,
+        "watchers_count": 8027,
+        "languages": {
+            "distinct": [
+                "JavaScript",
+                "Ruby",
+                "Kotlin",
+                "Mustache",
+                "Swift",
+                "Python",
+                "PHP",
+                "CSS",
+                "Objective-C",
+                "Java"
+            ],
+            "count": 10
+        },
+        "topics": {
+            "distinct": [
+                "sdk-ios",
+                "sdk-android",
+                "android-sdk",
+                "magento2",
+                "mailchimp-sdk",
+                "sdk",
+                "swift",
+                "kotlin",
+                "email-marketing",
+                "ios-sdk",
+                "mailchimp",
+                "ecommerce",
+                "magento",
+                "php"
+            ],
+            "count": 14
+        }
+    },
+    "bitbucket_profile": {
+        "public_repository_count": 10,
+        "forked_repository_count": 329,
+        "watchers_count": 20,
+        "languages": {
+            "distinct": [
+                "dart",
+                "javascript",
+                "python",
+                "ruby",
+                "php"
+            ],
+            "count": 5
+        }
+    }
+}
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTP 4** - Client error  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTP 500 - Server error  
 ### Future Enhancements
 This project includes a framework for building a test suite in the `/tests` directory. The test suite is built using the
 [pytest](https://docs.pytest.org/en/6.2.x/) package. There is a test module per module in the `/api` directory, as well 

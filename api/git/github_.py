@@ -22,6 +22,7 @@ def get_github_client(reset:bool = False) -> Github:
 
     global github_client
     if not github_client or reset:
+        print(current_app.config["GITHUB_API_TOKEN"])
         github_client = Github(current_app.config["GITHUB_API_TOKEN"])
 
     return github_client
