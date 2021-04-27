@@ -17,12 +17,12 @@
 ### API Specification
 ### GET http://127.0.0.1:5000/api/git/profile/[git profile name]  
 
-Headers
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Authorization - Bearer Welcometo2021
+Headers  
+Authorization - Bearer Welcometo2021  
 
-Returns
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTP 200 - Git GitHub and Bitbucket profile   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response Body  
+Returns  
+HTTP 200 - Git GitHub and Bitbucket profile  
+Response Body  
 ```{
     "profile_for": "mailchimp",
     "github_profile": {
