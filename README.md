@@ -23,7 +23,8 @@ Authorization - Bearer Welcometo2021
 Returns  
 HTTP 200 - Git GitHub and Bitbucket profile  
 Response Body  
-```{
+```
+{
     "profile_for": "mailchimp",
     "github_profile": {
         "public_repository_count": 30,
