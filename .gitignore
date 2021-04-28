@@ -19,4 +19,6 @@ htmlcov/
 .coverage.*
 *,cover
 logs/*.log
+logs/*.log.*
 .idea
+.env
