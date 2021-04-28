@@ -11,7 +11,7 @@ from github import Github
 github_client = None
 
 
-def get_github_client(reset:bool = False) -> Github:
+def get_github_client(reset: bool = False) -> Github:
     """
     Sets up a GitHub client
     """
@@ -47,7 +47,7 @@ def github_organization_profile(organization_name: str) -> dict:
         if repository_topics:
             organization_topics.update(repository_topics)
 
-    organization_profile = {
+    return {
         "public_repository_count": organization_public_repository_count,
         "forked_repository_count": organization_forked_repository_count,
         "watchers_count": organization_watchers_count,
@@ -60,5 +60,3 @@ def github_organization_profile(organization_name: str) -> dict:
             "count": len(organization_topics),
         },
     }
-
-    return organization_profile

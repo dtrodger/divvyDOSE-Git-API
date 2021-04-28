@@ -7,10 +7,7 @@ import logging
 import json
 from functools import wraps
 import os
-from typing import (
-    Callable,
-    Any
-)
+from typing import Callable, Any
 
 from flask import make_response, current_app
 from flask import wrappers
@@ -27,7 +24,12 @@ class APIException(Exception):
 
 
 def get_env_var(
-    key: str, default: str = None, is_list : bool = False, is_bool : bool = False, is_int : bool = False, exce : bool = True
+    key: str,
+    default: str = None,
+    is_list: bool = False,
+    is_bool: bool = False,
+    is_int: bool = False,
+    exce: bool = True,
 ) -> Any[str, bool, list, int]:
     """
     Gets environment variables
@@ -86,7 +88,9 @@ def error_response_body(exc: Exception, default: str) -> str:
     Error response body builder
     """
 
-    response_body = {"error": f"{exc}"} if isinstance(exc, APIException) else {"error": default}
+    response_body = (
+        {"error": f"{exc}"} if isinstance(exc, APIException) else {"error": default}
+    )
     return json.dumps(response_body)
 
 
@@ -123,7 +127,9 @@ def http_tea_pot_response(exc: Exception) -> wrappers.Response:
     """
 
     log.error(f"HTTP 418 - {exc}")
-    return make_response(error_response_body(exc, "This server is a teapot, not a coffee machine"), 418)
+    return make_response(
+        error_response_body(exc, "This server is a teapot, not a coffee machine"), 418
+    )
 
 
 def http_internal_server_error_response(exc: Exception) -> wrappers.Response:

@@ -87,11 +87,9 @@ def bitbucket_team_profile(team: str) -> dict:
         team_languages.add(repository["language"])
 
     # TODO unable to find topics on BitBuckets API docs
-    team_profile = {
+    return {
         "public_repository_count": team_public_repository_count,
         "forked_repository_count": team_forked_repository_count,
         "watchers_count": team_watchers_count,
         "languages": {"distinct": list(team_languages), "count": len(team_languages)},
     }
-
-    return team_profile

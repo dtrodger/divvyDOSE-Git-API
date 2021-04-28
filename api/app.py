@@ -20,7 +20,7 @@ from api.utils import (
 from api.git.resources.profile import GitProfileResource
 
 
-ENV_FILE_PATH = os.path.join(os.path.dirname(__file__), '../.env')
+ENV_FILE_PATH = os.path.join(os.path.dirname(__file__), "../.env")
 
 
 def create_app() -> Flask:
@@ -31,33 +31,35 @@ def create_app() -> Flask:
     # Load the .env file into environment variables
     load_dotenv(ENV_FILE_PATH)
     # Configure logging
-    dictConfig({
-        "version": 1,
-        "disable_existing_loggers": False,
-        "formatters": {
-            "standard": {
-                "format": "[%(asctime)s] {%(module)s:%(lineno)d} %(levelname)s - %(message)s"
+    dictConfig(
+        {
+            "version": 1,
+            "disable_existing_loggers": False,
+            "formatters": {
+                "standard": {
+                    "format": "[%(asctime)s] {%(module)s:%(lineno)d} %(levelname)s - %(message)s"
+                },
             },
-        },
-        "handlers": {
-            "stdout": {"class": "logging.StreamHandler", "formatter": "standard"},
-            "file": {
-                "class": "logging.handlers.RotatingFileHandler",
-                "level": "DEBUG",
-                "formatter": "standard",
-                "filename": "logs/api.log",
-                "mode": "a",
-                "maxBytes": 1048576,
-                "backupCount": 10,
+            "handlers": {
+                "stdout": {"class": "logging.StreamHandler", "formatter": "standard"},
+                "file": {
+                    "class": "logging.handlers.RotatingFileHandler",
+                    "level": "DEBUG",
+                    "formatter": "standard",
+                    "filename": "logs/api.log",
+                    "mode": "a",
+                    "maxBytes": 1048576,
+                    "backupCount": 10,
+                },
             },
-        },
-        "loggers": {
-            "": {
-                "handlers": ["stdout", "file"],
-                "level": get_env_var("DIVVYDOSE_LOG_LEVEL"),
-            }
-        },
-    })
+            "loggers": {
+                "": {
+                    "handlers": ["stdout", "file"],
+                    "level": get_env_var("DIVVYDOSE_LOG_LEVEL"),
+                }
+            },
+        }
+    )
     # Instantiate a Flask application
     flask_app = Flask(get_env_var("DIVVYDOSE_API_NAME"), static_folder=None)
     # Set the Flask app's configuration from environment variables
@@ -75,7 +77,9 @@ def create_app() -> Flask:
     # Instantiate a Flask-RESTful instance
     rest_api = Api(flask_app)
     # Register a Flask-RESTful resource
-    rest_api.add_resource(GitProfileResource, "/api/git/profile/<profile>/", endpoint="git-profile")
+    rest_api.add_resource(
+        GitProfileResource, "/api/git/profile/<profile>/", endpoint="git-profile"
+    )
 
     return flask_app
 
