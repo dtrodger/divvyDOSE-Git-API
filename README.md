@@ -8,7 +8,7 @@
 `$ pip install -r requirements.txt`  
 4. Set the FLASK_APP environment variable   
 `$ export FLASK_APP=api/app.py`
-5. Copy the `.env.template` file to `.env`, then add GitHub and Bitbucket authentication information
+5. Copy the `.env.template` file to `.env`, then add GitHub and Bitbucket authentication information  
 `$ cp .env.template .env`
 6. Run the API
 `$ flask run`  
