@@ -10,7 +10,7 @@
 `$ export FLASK_APP=api/app.py`
 5. Copy the `.env.template` file to `.env`, then add GitHub and Bitbucket authentication information  
 `$ cp .env.template .env`
-6. Run the API
+6. Run the API  
 `$ flask run`  
 7. Call the Git profile API with curl  
 `$ curl -H "Authorization: Bearer Welcometo2021" http://127.0.0.1:5000/api/git/profile/mailchimp/`
