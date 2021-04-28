@@ -12,7 +12,7 @@
 `$ cp .env.template .env`
 6. Run the API
 `$ flask run`  
-7. Call the Git profile API with curl
+7. Call the Git profile API with curl  
 `$ curl -H "Authorization: Bearer Welcometo2021" http://127.0.0.1:5000/api/git/profile/mailchimp/`
 8. Run the test suite and coverage report  
 `pytest --cov=. --cov-fail-under=1`  
